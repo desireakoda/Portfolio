@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Desire Akoda Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#F7F8FA;--card:#FFFFFF;--ink:#1B2430;--muted:#5A6878;--line:#E3E7ED;--navy:#0F1B2D;--accent:#0E8F86;--accent-soft:#E2F4F2;--chip:#EEF1F5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1220;--card:#121B2C;--ink:#E6EDF5;--muted:#9AA8BA;--line:#22304A;--navy:#060C17;--accent:#2BB5A8;--accent-soft:#12302F;--chip:#1A2539}}
+:root[data-theme="dark"]{--bg:#0B1220;--card:#121B2C;--ink:#E6EDF5;--muted:#9AA8BA;--line:#22304A;--navy:#060C17;--accent:#2BB5A8;--accent-soft:#12302F;--chip:#1A2539}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.15;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header.hero{background:var(--navy);color:#E6EDF5;padding:64px 0 48px}
+.hero h1{font-size:clamp(36px,6vw,60px);color:#fff}
+.hero .role{color:#2BB5A8;font-weight:600;font-size:18px;margin:12px 0 8px}
+.hero p{max-width:680px;color:#B7C3D2;margin:0 0 20px}
+.contact{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:#B7C3D2}
+.contact a{color:#2BB5A8}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:32px}
+.stat{border:1px solid #22304A;border-radius:12px;padding:14px 16px}
+.stat b{display:block;font-family:'Space Grotesk';font-size:26px;color:#fff}
+.stat span{font-size:13px;color:#9AA8BA}
+nav.filters{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.filters .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:12px;padding-bottom:12px}
+nav button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 14px;font:500 14px Inter;cursor:pointer;white-space:nowrap}
+nav button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+section{padding:40px 0 8px}
+section>h2{font-size:26px;margin-bottom:6px}
+section>.lede{color:var(--muted);margin:0 0 20px;max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.card h3{font-size:19px}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:2px 8px;align-self:flex-start}
+.card p{margin:0;color:var(--muted)}
+.card a.link{color:var(--accent);font-weight:600;font-size:14px;text-decoration:none}
+.card a.link:hover{text-decoration:underline}
+.card ul{margin:0;padding-left:18px;color:var(--ink)}
+.card li{margin:2px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.chips span{font-size:12px;background:var(--chip);border-radius:6px;padding:3px 8px;color:var(--muted)}
+.timeline{display:grid;gap:12px}
+.job{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:170px 1fr;gap:16px}
+.job .when{color:var(--muted);font-size:14px}
+.job h3{font-size:17px}
+.job .org{color:var(--accent);font-weight:600;font-size:14px;margin:2px 0 6px}
+.job ul{margin:0;padding-left:18px}
+@media (max-width:640px){.job{grid-template-columns:1fr;gap:4px}}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.skill h3{font-size:15px;color:var(--accent);margin-bottom:6px}
+.skill p{margin:0;font-size:14px;color:var(--muted)}
+.tk{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.tk .skill ul{margin:6px 0 0;padding-left:18px;font-size:14px;color:var(--muted)}
+.tk .skill li{margin:3px 0}
+.tk .skill li b{color:var(--ink);font-weight:600}
+footer{padding:40px 0 56px;color:var(--muted);font-size:14px}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <h1>Desire Akoda</h1>
+    <div class="role">IT Support &amp; Security Operations · Digital Media &amp; Product Builder</div>
+    <p>IT and operations professional with 8+ years across US and international organizations. I support users and systems, build web apps and AI tools, and run digital media operations that grow audiences across West Africa and beyond. Now transitioning into cybersecurity.</p>
+    <div class="contact">
+      <span>Washington, DC</span>
+      <span>+1 (737) 235-6059</span>
+      <span>desire.akoda@yahoo.com</span>
+      <a href="https://www.linkedin.com/in/iamdesireakoda">linkedin.com/in/iamdesireakoda</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>8+ yrs</b><span>IT support &amp; operations</span></div>
+      <div class="stat"><b>790K+</b><span>video views across TikTok, YouTube &amp; Facebook</span></div>
+      <div class="stat"><b>51K</b><span>TikTok followers (@sportfmtg)</span></div>
+      <div class="stat"><b>5+</b><span>web apps &amp; tools built</span></div>
+      <div class="stat"><b>EN · FR</b><span>fully bilingual</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="filters" aria-label="Filter projects">
+  <div class="wrap">
+    <button data-f="all" aria-pressed="true">All work</button>
+    <button data-f="tech" aria-pressed="false">Tech &amp; AI</button>
+    <button data-f="media" aria-pressed="false">Media &amp; content</button>
+    <button data-f="biz" aria-pressed="false">Business &amp; events</button>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section data-cat="tech">
+    <h2>Tech &amp; AI projects</h2>
+    <p class="lede">Web apps, internal tools and AI agents I designed and built, mostly for businesses in Togo.</p>
+    <div class="grid">
+      <article class="card"><span class="tag">AI agent</span><h3>News Agent</h3>
+        <p>A worldwide news digest and trending-stories agent covering sports, entertainment, tech and more, built to help a newsroom break and share stories faster.</p>
+        <ul><li>Simple tap-only interface for non-technical users</li><li>Prototyped first, then deployed as a live admin site</li></ul>
+        <div class="chips"><span>AI agents</span><span>API</span></div></article>
+
+      <article class="card"><span class="tag">Marketplace</span><h3>Sèvizi</h3><a class="link" href="https://sevizi.app">sevizi.app ↗</a>
+        <p>A Thumbtack-style marketplace connecting customers in Lomé with local service providers.</p>
+        <ul><li>Planned direct booking for beauty professionals</li><li>Provider recruitment run through in-person field visits</li></ul>
+        <div class="chips"><span>Web app</span><span>Marketplace</span><span>Go-to-market</span></div></article>
+
+      <article class="card"><span class="tag">SaaS</span><h3>Sèvi Go: POS &amp; invoicing</h3><a class="link" href="https://go.sevizi.app">go.sevizi.app ↗</a>
+        <p>A point-of-sale and invoicing module inside Sèvizi for small businesses, bilingual French/English for expansion into Ghana.</p>
+        <ul><li>Branded invoices, automatic totals, print or email</li><li>Mobile money collection through PayDunya</li><li>Tiered plans from pay-as-you-go to unlimited POS</li></ul>
+        <div class="chips"><span>Payments</span><span>SaaS pricing</span><span>i18n</span></div></article>
+
+      <article class="card"><span class="tag">Marketplace</span><h3>Soie</h3><a class="link" href="https://monsoie.com">monsoie.com ↗</a>
+        <p>A multi-vendor e-commerce marketplace designed for Togo.</p>
+        <ul><li>PostgreSQL data model</li><li>Freemium vendor subscriptions</li><li>Mobile-money-first checkout UX</li></ul>
+        <div class="chips"><span>PostgreSQL</span><span>E-commerce</span><span>Product design</span></div></article>
+
+      <article class="card"><span class="tag">Website</span><h3>We Are Aurum</h3><a class="link" href="https://weareaurum.xyz">weareaurum.xyz ↗</a>
+        <p>Company website for a production house, with a tenant payment portal.</p>
+        <div class="chips"><span>Web</span><span>Supabase</span></div></article>
+
+      <article class="card"><span class="tag">Web app</span><h3>Jeux Dia</h3><a class="link" href="https://jeuxdia.com">jeuxdia.com ↗</a>
+        <p>Web app for a VR gaming and esports brand: game sessions, events and tournaments.</p>
+        <div class="chips"><span>Web app</span><span>Supabase</span><span>Gaming</span></div></article>
+
+      <article class="card"><span class="tag">Events platform</span><h3>OuiMoove</h3><a class="link" href="https://ouimoove.app">ouimoove.app ↗</a>
+        <p>An events app where organizers list events and sell tickets, and users discover and buy tickets for events.</p>
+        <ul><li>Event listings and ticket sales for organizers</li><li>Ticket purchases for attendees</li><li>OuiMoove Weddings: a wedding planning feature I added to the app</li></ul>
+        <div class="chips"><span>Web app</span><span>Ticketing</span><span>Payments</span></div></article>
+
+      <article class="card"><span class="tag">Internal tool</span><h3>Rental management portal</h3>
+        <p>A browser-based tool for managing two rental properties, with a tenant portal.</p>
+        <ul><li>Tenant billing with per-room electricity metering</li><li>Invoices delivered over WhatsApp</li><li>Tenant payment portal backed by Supabase</li></ul>
+        <div class="chips"><span>Supabase</span><span>Billing</span><span>Automation</span></div></article>
+
+      <article class="card"><span class="tag">Learning app</span><h3>0→1 Academy</h3>
+        <p>An interactive learning app I built to prepare for cloud security roles: 14 modules and 42 lessons.</p>
+        <ul><li>Cybersecurity fundamentals</li><li>SQL</li><li>Cloud security</li></ul>
+        <div class="chips"><span>Cybersecurity</span><span>SQL</span><span>Cloud</span></div></article>
+
+      <article class="card"><span class="tag">Website</span><h3>Sport FM website</h3><a class="link" href="https://sportfmtg.com">sportfmtg.com ↗</a>
+        <p>Rebuilt the radio station's website, with banner ad inventory sold to partners.</p>
+        <ul><li>Live radio, shows and news in one place</li><li>Ad placements packaged on a digital rate card</li></ul>
+        <div class="chips"><span>Web</span><span>Ad tech</span></div></article>
+
+      <article class="card"><span class="tag">Media tooling</span><h3>AI video editing pipeline</h3>
+        <p>An automated editing setup for short-form and vlog content.</p>
+        <ul><li>Transcription with Whisper, processing with FFmpeg</li><li>Motion titles and graphics with HyperFrames</li><li>Storyboard → preview → final export workflow</li></ul>
+        <div class="chips"><span>FFmpeg</span><span>Whisper</span><span>Automation</span></div></article>
+
+      <article class="card"><span class="tag">Data viz</span><h3>World Cup 2026 base camp map</h3>
+        <p>An interactive French-language map of team base camps for the 2026 FIFA World Cup, built for newsroom content.</p>
+        <div class="chips"><span>HTML/SVG</span><span>Interactive</span></div></article>
+    </div>
+  </section>
+
+  <section data-cat="media">
+    <h2>Media &amp; content</h2>
+    <p class="lede">Shows, channels and content operations for Sport FM, Togo's leading sports radio station (91.9 FM), and other brands.</p>
+    <div class="grid">
+      <article class="card"><span class="tag">Digital growth</span><h3>Sport FM social &amp; YouTube</h3>
+        <p>Led the shift to social video as the station's top priority.</p>
+        <ul><li>~493K TikTok, ~213K Facebook and ~85K YouTube views</li><li>Audience in Togo, Côte d'Ivoire, Senegal, France and the US</li><li>Introduced a "Viral title | Show name" titling standard to lift views</li></ul>
+        <div class="chips"><span>TikTok</span><span>YouTube</span><span>Analytics</span></div></article>
+
+      <article class="card"><span class="tag">Live coverage</span><h3>Mondial 360</h3>
+        <p>Local coverage of the 2026 FIFA World Cup, with a sponsorship deck (Bronze, Silver and Gold tiers) built on real audience data.</p>
+        <div class="chips"><span>Sponsorship</span><span>Live content</span></div></article>
+
+      <article class="card"><span class="tag">Shows</span><h3>English-language programming</h3>
+        <p>Hotseat (sports talk), Your View and Weekly Take, broadcast live on radio, YouTube and the web, plus short vertical news videos hosted by an on-air presenter.</p>
+        <div class="chips"><span>Radio</span><span>YouTube</span><span>Short-form</span></div></article>
+
+      <article class="card"><span class="tag">Workflow</span><h3>Newsroom production system</h3>
+        <p>A content pipeline and accountability system for the journalism team: Trello board, reminder templates and clear escalation steps.</p>
+        <div class="chips"><span>Trello</span><span>SOPs</span><span>Team ops</span></div></article>
+
+      
+
+      <article class="card"><span class="tag">YouTube</span><h3>Olassé</h3>
+        <p>Relaunch of a travel, food and lifestyle channel, including a French-language trivia game show and a "tour guide of Lomé" format with a local artist.</p>
+        <div class="chips"><span>Show development</span><span>Talent deals</span></div></article>
+
+      
+    </div>
+  </section>
+
+  <section data-cat="biz">
+    <h2>Business, partnerships &amp; events</h2>
+    <p class="lede">Commercial work: sponsorship packaging, ad sales, contracts and event production.</p>
+    <div class="grid">
+      <article class="card"><span class="tag">Event</span><h3>Sport FM 25th anniversary</h3>
+        <p>A weeklong anniversary program with sponsor kits from Bronze to Diamond tier, merchandise, a press conference, live shows at partner venues, and a football tournament in Sokodé.</p>
+        <div class="chips"><span>Events</span><span>Sponsorship</span></div></article>
+
+      <article class="card"><span class="tag">Awards show</span><h3>Sport FM Awards</h3>
+        <p>An ESPYs-style awards concept, with the first edition produced as a pre-recorded digital show.</p>
+        <div class="chips"><span>Concept</span><span>Production</span></div></article>
+
+      <article class="card"><span class="tag">Ad sales</span><h3>Partner offers &amp; rate cards</h3>
+        <p>Sponsorship proposals for institutional and brand partners (past partners include T-oil, Canalbox and Voltic), a digital rate card, and an affordable radio package for small businesses.</p>
+        <div class="chips"><span>Pricing</span><span>Proposals</span><span>Sales</span></div></article>
+
+      
+
+      <article class="card"><span class="tag">Esports</span><h3>Jeux Dia FIFA Cup &amp; VR arcade</h3>
+        <p>A 10-player EA FC tournament with a public final, promoted on radio, plus VR gaming sessions (shooting, boxing, driving) at a partner restaurant.</p>
+        <div class="chips"><span>Gaming</span><span>Community</span></div></article>
+
+      
+
+      
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <p class="lede">Where this work happened.</p>
+    <div class="timeline">
+      <div class="job"><div class="when">2019 – Present</div><div><h3>Head of Digital Operations &amp; Content</h3><div class="org">Sport FM · Lomé, Togo</div>
+        <ul><li>Resolved help desk tickets and hardware/software issues; managed user accounts and passwords</li><li>Set up workstations, devices and network connections for broadcast teams</li><li>Built the AI news agent API; wrote SOPs and standardized processes</li></ul></div></div>
+      <div class="job"><div class="when">2017 – 2025</div><div><h3>Operations, IT &amp; Social Media Strategist</h3><div class="org">We Are Aurum</div>
+        <ul><li>Built Sèvizi and Soie</li><li>Handled help desk requests, device and network setup, and account management</li><li>Ran QA, audits and structured performance reporting</li></ul></div></div>
+      <div class="job"><div class="when">2016 – 2018</div><div><h3>Operations Manager</h3><div class="org">Bassett Furniture Industries Inc.</div>
+        <ul><li>On-site IT support: troubleshooting, device setup, user accounts</li><li>Managed daily operations and teams overseeing $1M+ in inventory</li></ul></div></div>
+      <div class="job"><div class="when">2013 – 2016</div><div><h3>Business Development Manager</h3><div class="org">Ananda Beauty Supply</div>
+        <ul><li>Supported marketing campaigns and built vendor and agency partnerships</li></ul></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill"><h3>IT Support</h3><p>Help desk ticketing, hardware and software troubleshooting, device setup, Microsoft 365, Active Directory</p></div>
+      <div class="skill"><h3>Identity &amp; Security</h3><p>Account provisioning, password resets, access control, risk and compliance, SOPs and audits</p></div>
+      <div class="skill"><h3>Development &amp; AI</h3><p>Web apps, APIs, AI agents, Supabase/PostgreSQL, Python, PowerShell</p></div>
+      <div class="skill"><h3>Media &amp; Growth</h3><p>Social video strategy, YouTube/TikTok analytics, video editing pipelines, sponsorship sales</p></div>
+      <div class="skill"><h3>Education</h3><p>B.A. Business Management, University of the West of Scotland (2010–2013)</p></div>
+      <div class="skill"><h3>Languages</h3><p>English and French, both fluent</p></div>
+    </div>
+  </section>
+</main>
+<footer class="wrap">Desire Akoda · desire.akoda@yahoo.com · +1 (737) 235-6059</footer>
+<script>
+const btns=document.querySelectorAll('nav button');
+btns.forEach(b=>b.addEventListener('click',()=>{
+  btns.forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const f=b.dataset.f;
+  document.querySelectorAll('section[data-cat]').forEach(s=>s.classList.toggle('hidden',f!=='all'&&s.dataset.cat!==f));
+}));
+</script>
+</body>
+</html>
